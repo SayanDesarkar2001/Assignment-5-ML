@@ -16,7 +16,6 @@ iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
 # Display basic information
 print(iris_df.head())
 
-# 2A. KMeans Clustering
 # Apply KMeans
 kmeans = KMeans(n_clusters=3, random_state=42)
 iris_df['kmeans_cluster'] = kmeans.fit_predict(iris_df)
@@ -30,7 +29,6 @@ plt.xlabel(iris.feature_names[0])
 plt.ylabel(iris.feature_names[1])
 plt.show()
 
-# 2B. Hierarchical Clustering
 # Perform Hierarchical Clustering
 linkage_matrix = linkage(iris_df.iloc[:, :-1], method='ward')
 
